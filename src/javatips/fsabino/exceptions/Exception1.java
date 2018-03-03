@@ -6,7 +6,7 @@ package javatips.fsabino.exceptions;
  * necesitan ser declarados, o se producen errores en tiempo de compilación. Por
  * ejemplo, en la entrada por teclado se puede generar una excepcion
  * IOException, la cual no puede manejarse en el programa.*
- * 
+ * Bibliografia: http://fcqi.tij.uabc.mx/usuarios/palacios/java5.pdf
  */
 public class Exception1 {
 
