@@ -1,4 +1,4 @@
-package javatips.fsabino.annotations;
+package javatips.fsabino.annotations.example1_frutos;
 
 import javatips.fsabino.annotations.annotation.Dulce;
 import javatips.fsabino.annotations.annotation.FrutoSeco;

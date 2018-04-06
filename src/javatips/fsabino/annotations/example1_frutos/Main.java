@@ -1,4 +1,4 @@
-package javatips.fsabino.annotations;
+package javatips.fsabino.annotations.example1_frutos;
 
 import java.lang.annotation.Annotation;
 import java.lang.reflect.Field;
