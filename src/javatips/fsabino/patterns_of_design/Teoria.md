@@ -70,6 +70,9 @@ Se definen como patrones de diseño software que ofrecen soluciones respecto a l
 **Visitor (Visitante)**: Permite definir nuevas operaciones sobre una jerarquía de clases sin modificar las clases sobre las que opera.
 
 
+# PATRONES DE CREACION
+
+
 ## SINGLETON (ÚNICO)
 
 Es un patron que esta en des-uso ya que con la inyeccion de dependencias se ha sustituido.
@@ -106,6 +109,38 @@ Aplicación:
 4. Para encapsular la creación de muchos objetos.
 
 Video: https://www.youtube.com/watch?v=ruN4JRd9IGk
+
+
+## FACTORY METHOD (FACTORIA)
+
+Poder contruir objetos sin saber lo que estamos creando. Por ejemplo podríamos hacer un "createFigura" sin saber que figura estamos creando.
+Tendriamos un producto abstracto y un conjunto de productos concretos. Se debe crear una estrutura paralela para la creacion de los productos. Se debera tener un "creador" abtracto para cada producto abstracto y un "creador" concreto para cada producto concreto. El cliente utilizada el creador abstracto. El factory principal tendra una instancia de producto sin saber que producto es y ademas tendra una instancia de creador sin saber que tipo de creador es.
+Cada vez que hay un nuevo producto se debe crear la clase concreta del producto y a su vez la clase concreta creadora de ese producto.
+
+Video: https://www.youtube.com/watch?v=UvoHIDs3YmE
+
+
+# PATRONES DE COMPORTAMIENTO
+
+
+## OBSERVER
+
+**Propósito**: Defina una dependencia de uno a muchos entre los objetos de manera que cuando un objeto cambia de estado, todos los que dependen de él son notificados y se actualizan automáticamente.
+
+Los **Observers** se registran con el **Subject** a medida que se crean. Siempre que el Subject cambie, difundirá a todos los Observers registrados que ha cambiado, y cada Observer consulta al Subject que supervisa para obtener el cambio de estado que se haya generado.
+
+En Java tenemos acceso a la clase Observer mediante java.util.Observer.
+
+Aplicación: Usamos el patrón Observer cuando...
+
+1. Un cambio en un objeto requiere cambiar los demás, pero no sabemos cuántos objetos hay que cambiar.
+2. Configurar de manera dinámica un componente de la Vista, envés de estáticamente durante el tiempo de compilación.
+3. Un objeto debe ser capaz de notificar a otros objetos sin que estos objetos estén fuertemente acoplados.
+
+Video: https://www.youtube.com/watch?v=r3TdeykOFZQ
+
+
+
 
 ## Bibliografía
 https://es.wikipedia.org/wiki/Patr%C3%B3n_de_dise%C3%B1o

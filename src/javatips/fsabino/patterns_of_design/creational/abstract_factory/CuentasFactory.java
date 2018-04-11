@@ -4,7 +4,7 @@ public abstract class CuentasFactory {
 	private static CuentasFactory cuenta;
 	
 	public static void setCuentasFactory(CuentasFactory c) {
-		CuentasFactory.cuenta = c;
+		cuenta = c;
 	}
 	
 	public static CuentasFactory getCuentasFactory() {
