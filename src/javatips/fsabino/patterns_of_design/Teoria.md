@@ -1,0 +1,115 @@
+# Patrones de Diseño
+
+Los **patrones de diseño** son unas técnicas para resolver problemas comunes en el desarrollo de software y otros ámbitos referentes al diseño de interacción o interfaces.
+
+Un patrón de diseño resulta ser una solución a un problema de diseño. Para que una solución sea considerada un patrón debe poseer ciertas características. Una de ellas es que debe haber comprobado su efectividad resolviendo problemas similares en ocasiones anteriores. Otra es que debe ser reutilizable, lo que significa que es aplicable a diferentes problemas de diseño en distintas circunstancias.
+
+Los patrones de diseño pretenden:
+
+- Proporcionar catálogos de elementos reusables en el diseño de sistemas software.
+- Evitar la reiteración en la búsqueda de soluciones a problemas ya conocidos y solucionados anteriormente.
+- Formalizar un vocabulario común entre diseñadores.
+- Estandarizar el modo en que se realiza el diseño.
+- Facilitar el aprendizaje de las nuevas generaciones de diseñadores condensando conocimiento ya existente.
+
+Asimismo, no pretenden:
+
+- Imponer ciertas alternativas de diseño frente a otras.
+- Eliminar la creatividad inherente al proceso de diseño.
+- No es obligatorio utilizar los patrones, solo es aconsejable en el caso de tener el mismo problema o similar que soluciona el patrón, siempre teniendo en cuenta que en un caso particular puede no ser aplicable. "Abusar o forzar el uso de los patrones puede ser un error".
+
+
+### Categorías de patrones
+
+**Patrones de arquitectura**: Aquellos que expresan un esquema organizativo estructural fundamental para sistemas de software.
+**Patrones de diseño**: Aquellos que expresan esquemas para definir estructuras de diseño (o sus relaciones) con las que construir sistemas de software.
+**Dialectos**: Patrones de bajo nivel específicos para un lenguaje de programación o entorno concreto.
+
+Además, también es importante reseñar el concepto de "**antipatrón de diseño**", que con forma semejante a la de un patrón, intenta prevenir contra errores comunes de diseño en el software. La idea de los antipatrones es dar a conocer los problemas que acarrean ciertos diseños muy frecuentes, para intentar evitar que diferentes sistemas acaben una y otra vez en el mismo callejón sin salida por haber cometido los mismos errores.
+
+
+### Patrones creacionales
+
+Corresponden a patrones de diseño de software que solucionan problemas de creación de instancias. Nos ayudan a encapsular y abstraer dicha creación:
+
+**Object Pool** (no pertenece a los patrones especificados por GoF): se obtienen objetos nuevos a través de la clonación. Utilizado cuando el costo de crear una clase es mayor que el de clonarla. Especialmente con objetos muy complejos. Se especifica un tipo de objeto a crear y se utiliza una interfaz del prototipo para crear un nuevo objeto por clonación. El proceso de clonación se inicia instanciando un tipo de objeto de la clase que queremos clonar.
+**Abstract Factory** (fábrica abstracta): permite trabajar con objetos de distintas familias de manera que las familias no se mezclen entre sí y haciendo transparente el tipo de familia concreta que se esté usando. El problema a solucionar por este patrón es el de crear diferentes familias de objetos, como por ejemplo, la creación de interfaces gráficas de distintos tipos (ventana, menú, botón, etc.).
+**Builder (constructor virtual)**: abstrae el proceso de creación de un objeto complejo, centralizando dicho proceso en un único punto.
+**Factory Method (método de fabricación)**: centraliza en una clase constructora la creación de objetos de un subtipo de un tipo determinado, ocultando al usuario la casuística, es decir, la diversidad de casos particulares que se pueden prever, para elegir el subtipo que crear. Parte del principio de que las subclases determinan la clase a implementar. A continuación se muestra un ejemplo de este patrón:
+**Prototype (prototipo)**: crea nuevos objetos clonándolos de una instancia ya existente.
+**Singleton (instancia única)**: garantiza la existencia de una única instancia para una clase y la creación de un mecanismo de acceso global a dicha instancia. Restringe la instanciación de una clase o valor de un tipo a un solo objeto.
+**Model View Controller (MVC)**: Modelo Vista Controlador. Es un patrón de arquitectura de software que separa los datos y la lógica de negocio de una aplicación de la interfaz de usuario y el módulo encargado de gestionar los eventos y las comunicaciones. Este patrón plantea la separación del problema en tres capas: la capa model, que representa la realidad; la capa controller , que conoce los métodos y atributos del modelo, recibe y realiza lo que el usuario quiere hacer; y la capa vista, que muestra un aspecto del modelo y es utilizada por la capa anterior para interactuar con el usuario.
+
+### Patrones estructurales
+
+Son los patrones de diseño software que solucionan problemas de composición (agregación) de clases y objetos:
+
+**Adapter o Wrapper (Adaptador o Envoltorio)**: Adapta una interfaz para que pueda ser utilizada por una clase que de otro modo no podría utilizarla.
+**Bridge (Puente)**: Desacopla una abstracción de su implementación.
+**Composite (Objeto compuesto)**: Permite tratar objetos compuestos como si de uno simple se tratase.
+**Decorator (Decorador)**: Añade funcionalidad a una clase dinámicamente.
+**Facade (Fachada)**: Provee de una interfaz unificada simple para acceder a una interfaz o grupo de interfaces de un subsistema.
+**Flyweight (Peso ligero)**: Reduce la redundancia cuando gran cantidad de objetos poseen idéntica información.
+**Proxy**: Proporciona un intermediario de un objeto para controlar su acceso.
+**Module**: Agrupa varios elementos relacionados, como clases, singletons, y métodos, utilizados globalmente, en una entidad única.
+
+### Patrones de comportamiento
+
+Se definen como patrones de diseño software que ofrecen soluciones respecto a la interacción y responsabilidades entre clases y objetos, así como los algoritmos que encapsulan:
+
+**Chain of Responsibility (Cadena de responsabilidad)**: Permite establecer la línea que deben llevar los mensajes para que los objetos realicen la tarea indicada.
+**Command (Orden)**: Encapsula una operación en un objeto, permitiendo ejecutar dicha operación sin necesidad de conocer el contenido de la misma.
+**Interpreter (Intérprete)**: Dado un lenguaje, define una gramática para dicho lenguaje, así como las herramientas necesarias para interpretarlo.
+**Iterator (Iterador)**: Permite realizar recorridos sobre objetos compuestos independientemente de la implementación de estos.
+**Mediator (Mediador)**: Define un objeto que coordine la comunicación entre objetos de distintas clases, pero que funcionan como un conjunto.
+**Memento (Recuerdo)**: Permite volver a estados anteriores del sistema.
+**Observer (Observador)**: Define una dependencia de uno-a-muchos entre objetos, de forma que cuando un objeto cambie de estado se notifique y actualicen automáticamente todos los objetos que dependen de él.
+**State (Estado)**: Permite que un objeto modifique su comportamiento cada vez que cambie su estado interno.
+**Strategy (Estrategia)**: Permite disponer de varios métodos para resolver un problema y elegir cuál utilizar en tiempo de ejecución.
+**Template Method (Método plantilla)**: Define en una operación el esqueleto de un algoritmo, delegando en las subclases algunos de sus pasos, esto permite que las subclases redefinan ciertos pasos de un algoritmo sin cambiar su estructura.
+**Visitor (Visitante)**: Permite definir nuevas operaciones sobre una jerarquía de clases sin modificar las clases sobre las que opera.
+
+
+## SINGLETON (ÚNICO)
+
+Es un patron que esta en des-uso ya que con la inyeccion de dependencias se ha sustituido.
+
+private static Singleton s = null; --> Creacion bajo demanda. (creacion perezosa) Lo crea cuando alguien lo necesita.
+private static Singleton s = new Singleton(); --> Se crea cuando se inicia el sistema. (creacion temprana)
+
+1. Atributo estatico privado que sea del mismo tipo de la clase.
+2. Constructor de la clase privado, para que nadie "sin querer" me haga el "new" de la clase y no se cumple la instancia unica.
+3. Metodo estatico publico que devuelve la propia instancia del paso 1.
+
+**Propósito**: Asegurar que una clase tenga una única instancia y proporcionar un punto de acceso global a la misma. El cliente llama a la función de acceso cuando se requiere una referencia a la instancia única.
+
+Video: https://www.youtube.com/watch?v=fv2YXziJzxw
+
+## ABSTRACT FACTORY (FABRICA ABSTRACTA)
+
+Familias que crean productos abstractos. Los clientes no pueden crear productos abstractos porque los mismos son abtractos.
+Proporciona una interface para crear familias de objetos relacionados.
+Cada producto es de una sola familia, no puede existir a varias familias.
+El cleinte no sabra con que familai estas trabajando.
+
+**Propósito**: Proveer una interfaz para la creación de familias o objetos dependientes relacionados, sin especificar sus clases concretas. 
+
+Es una jerarquía que encapsula muchas familias posibles y la creación de un conjunto de productos. 
+El objeto "**fábrica**" tiene la responsabilidad de proporcionar servicios de creación para toda una familia de productos. 
+Los "**clientes**" nunca crean directamente los objetos de la familia, piden la fábrica que los cree por ellos.
+
+Aplicación: 
+
+1. Cuando tenemos una o múltiples familias de productos.
+2. Cuando tenemos muchos objetos que pueden ser cambiados o agregados durante el tiempo de ejecución.
+3. Cuando queremos obtener un objeto compuesto de otros objetos, los cuales desconocemos a que clase pertenecen.
+4. Para encapsular la creación de muchos objetos.
+
+Video: https://www.youtube.com/watch?v=ruN4JRd9IGk
+
+## Bibliografía
+https://es.wikipedia.org/wiki/Patr%C3%B3n_de_dise%C3%B1o
+https://github.com/LuisBurgos/design-patterns
+
+## Ejemplo de codigo
+https://github.com/miw-upm/APAW-pd/
