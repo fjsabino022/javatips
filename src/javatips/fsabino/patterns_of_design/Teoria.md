@@ -184,6 +184,17 @@ Aplicación:
 
 Video: https://www.youtube.com/watch?v=U7kzLu7Vjlg&list=PLj2IVmcP-_QOQcDplVNiLbBQ6OLCXX7fv&index=5
 
+
+## COMPOSITE (COMPUESTO)
+
+En un problema de arbol, tratamos por igual a una hoja que a un compuesto. Con esta forma evitamos el codigo spaguetti y la alta cohesión (mas de una responsabilidad para una clase) entre las clases.
+Creamos una clase abstracta que tiene el rol de componente, esta clase abstracta tendrá atributos compartidos entre la hoja y el compuesto. Cuando un atributo solo es de compuesto se lo lleva a compuesto.
+La hoja y el compuesto concreto heredan de esta clase abtracta. La clase compuesta a su vez tiene atributos particulares del compuesto.
+La clase compuesto tiene un atributo de una lista de componente.
+
+
+Video: https://www.youtube.com/watch?v=E85Nu2auOFI&t=2s
+
 ## Bibliografía
 https://es.wikipedia.org/wiki/Patr%C3%B3n_de_dise%C3%B1o
 https://github.com/LuisBurgos/design-patterns
