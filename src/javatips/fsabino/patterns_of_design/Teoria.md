@@ -157,6 +157,33 @@ Aplicación:
 
 Video: https://www.youtube.com/watch?v=sxNR8sAN9ow&index=16&list=PLC238B0613515968F
 
+
+# PATRONES ESTRUCTURALES
+
+
+## FACADE (FACHADA)
+
+En sistemas complejos se utiliza una interfaz unica y simplificada para simplificar las cosas.
+Con el crecimiento del numero de servicios en la aplicacion, metemos un intermediario que es la fachada y este es el que permite determinar los servicios de alto nivel.
+El cliente pasa a tratar con la fachada y no con los servicios directamente. Una vez que metimos la fachada, y se agregan nuevos servicios, no debemos saltear la fachada y modificar esta para que se agregue el servicio.
+
+**Propósito**: Proporcionar una interfaz unificada para un conjunto de interfaces de un subsistema. Facade define una interfaz de alto nivel que hace que el subsistema sea más fácil de usar.
+
+Este patrón protege los clientes de los componentes del subsistema, propiciando el menor uso de componentes para que el subsistema pueda ser utilizado.
+Además, promueve un bajo acoplamiento entre subsistemas y clientes.
+Este patrón no evita que los clientes usen las clases internas del subsistema, si es que es necesario.
+Es importante mencionar que el objeto Facade debe ser extremadamente simple. No debe convertirse en un objeto "dios".
+
+Aplicación: 
+
+1. Cuando queremos encapsular un subsistema complejo con una interface más simple.
+2. Para crear una interface simplificada que ejecuta muchas acciones "detŕas del escenario".
+3. Existen muchas dependencias entre clientes y la implementación de clases de una abstracción. Se introduce el facade para desacoplar el subsistema de los clientes y otros subsistemas.
+4. Necesitamos desacoplar subsistemas entre sí, haciendo que se comuniquen únicamente mediante Facades.
+5. Para definir un punto de entrada a cada nivel del subsistema.
+
+Video: https://www.youtube.com/watch?v=U7kzLu7Vjlg&list=PLj2IVmcP-_QOQcDplVNiLbBQ6OLCXX7fv&index=5
+
 ## Bibliografía
 https://es.wikipedia.org/wiki/Patr%C3%B3n_de_dise%C3%B1o
 https://github.com/LuisBurgos/design-patterns
