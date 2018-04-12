@@ -140,11 +140,29 @@ Aplicación: Usamos el patrón Observer cuando...
 Video: https://www.youtube.com/watch?v=r3TdeykOFZQ
 
 
+## STRATEGY (ESTRATEGIA)
 
+Permite encapsular un algoritmo. Asignar diferentes algoritmos a contextos.
+
+**Propósito**: Definir una familia de algoritmos, encapsular cada uno, y que sean intercambiables. Strategy permite al algoritmo variar independientemente de los clientes que lo utilizan.
+
+Aplicación: 
+
+1. Definir una familia de comportamientos.
+2. Definir variantes de un mismo algoritmo.
+3. Poder cambiar el comportamiento en tiempo de ejecución, es decir, dinámicamente.
+4. Reducir largas listas de condicionales.
+5. Evitar código duplicado.
+6. Ocultar código complicado, o que no queremos revelar, del usuario.
+
+Video: https://www.youtube.com/watch?v=sxNR8sAN9ow&index=16&list=PLC238B0613515968F
 
 ## Bibliografía
 https://es.wikipedia.org/wiki/Patr%C3%B3n_de_dise%C3%B1o
 https://github.com/LuisBurgos/design-patterns
+https://www.tutorialspoint.com/design_pattern/strategy_pattern.htm
 
 ## Ejemplo de codigo
 https://github.com/miw-upm/APAW-pd/
+https://github.com/iluwatar/java-design-patterns
+https://github.com/alexyslozada/CursoPatronesDiseno
