@@ -1,7 +1,7 @@
 # Lambda
 
 Las expresiones lambda son funciones anónimas, es decir, funciones que no necesitan una clase.
-su sintáxis básica se detalla a continuación:
+Su sintáxis básica se detalla a continuación:
 
 	(parametro) -> {cuerpo lambda}
 
