@@ -1,4 +1,10 @@
 # Sreams in JAVA
+
+Streams son interfaces en Java 8 que tienen las siguientes caracteristicas:
+1. No almacenan ningun dato. Consumen los datos de las collecciones y a partir de estos los procesan, pero no almacenan datos como si lo hacen las colecciones.
+2. No deberian modificar los datos que estan procesando.
+3. Puede procesar la cantidad de informacion que queramos, datos infinitos.
+
 La API Stream nos permite realizar operaciones de tipo filtro/mapeo/reducción sobre colecciones de datos de forma secuencial o paralela y que su implementación sea transparente para el desarrollador.
 Lambdas y Stream son una combinación muy poderosa que requiere un cambio de paradigma en la forma en la que hemos escrito código Java hasta el momento.
 
@@ -17,6 +23,10 @@ El siguiente ejemplo nos permite visualizar las tres (3) partes que componen un 
 Fuente de información → La lista de transacciones
 Cero o más operaciones intermedias → Se puede apreciar la operación filter y la operación mapToInt.
 Operación terminal que produce un resultado o un efecto sobre los datos → Se puede apreciar la operación sum.
+La operacion terminal permite que el stream sea ejecutado, sin una operacion terminal, el stream nunca se ejecuta.
+
+Las operaciones intermedias, por ejemplo "peek", siempre devuelven un stream. Las operaciones terminales devuelven algo o nada.
+
 
 L1ist transacciones = ...  int  sum = transacciones.stream().  	
      filter(t ->  t.getProveedor().getCiudad().equals(“Cali”)).
