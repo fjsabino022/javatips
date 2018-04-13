@@ -34,10 +34,10 @@ No hay ningún método en Collection para obtener el tercer elemento. No lo pued
 
 La interfaz List sí admite elementos duplicados. A parte de los métodos heredados de Collection, añade métodos que permiten mejorar los siguientes puntos:
 
-Acceso posicional a elementos: manipula elementos en función de su posición en la lista.
-Búsqueda de elementos: busca un elemento concreto de la lista y devuelve su posición.
-Iteración sobre elementos: mejora el Iterator por defecto.
-Rango de operación: permite realizar ciertas operaciones sobre ragos de elementos dentro de la propia lista.
+1. Acceso posicional a elementos: manipula elementos en función de su posición en la lista.
+2. Búsqueda de elementos: busca un elemento concreto de la lista y devuelve su posición.
+3. Iteración sobre elementos: mejora el Iterator por defecto.
+4. Rango de operación: permite realizar ciertas operaciones sobre ragos de elementos dentro de la propia lista.
 
 En Resumen:
 La interfaz List es una coleccion ordenada en donde los elementos duplicados estan permitidos.
@@ -81,6 +81,7 @@ Los puntos importantes son:
 3. Es una clase no sincronizada.
 4. La manipulacion es muy rapida ya que no necesita recursos cuando se realiza.
 5. Puede ser usada como lista, cola o pila.
+6. El acceso a un elemento particular de LinkedList es muy costoso.
 
 Declaracion
 public class LinkedList<E> extends AbstractSequentialList<E> implements List<E>, Deque<E>, Cloneable, Serializable  
@@ -88,19 +89,19 @@ public class LinkedList<E> extends AbstractSequentialList<E> implements List<E>,
 
 ### Set
 
-La interfaz Set define una colección que no puede contener elementos duplicados. Esta interfaz contiene, únicamente, los métodos heredados de Collection añadiendo la restricción de que los elementos duplicados están prohibidos. Es importante destacar que, para comprobar si los elementos son elementos duplicados o no lo son, es necesario que dichos elementos tengan implementada, de forma correcta, los métodos equals y hashCode. Para comprobar si dos Set son iguales, se comprobarán si todos los elementos que los componen son iguales sin importar en el orden que ocupen dichos elementos.
+La interfaz Set define una colección que no puede contener elementos duplicados. Esta interfaz contiene, únicamente, los métodos heredados de Collection añadiendo la restricción de que los elementos duplicados están prohibidos. Es importante destacar que, para comprobar si los elementos son elementos duplicados o no lo son, es necesario que dichos elementos tengan implementada, de forma correcta, los métodos **equals y hashCode**. Para comprobar si dos Set son iguales, se comprobarán si todos los elementos que los componen son iguales sin importar en el orden que ocupen dichos elementos.
 
 En un set el orden no es dato. Si bien es posible que existan sets que nos aseguren un orden determinado cuando los recorremos (por ejemplo obtener strings en orden alfabético), ese orden no es arbitrario y decidido por nosotros, ya que la interfaz Set no tienen ninguna funcionalidad para manipularlo (como si lo admite la interfaz List).
 
-La ventaja de utilizar Sets es que preguntar si un elemento ya está contenido mediante “contains()” suele ser muy eficiente. Entonces es conveniente utilizarlos cada vez que necesitemos una colección en la que no importe el orden, pero que necesitemos preguntar si un elemento está o no.
+La ventaja de utilizar Sets es que preguntar si un elemento ya está contenido mediante **“contains()”** suele ser muy **eficiente**. Entonces es conveniente utilizarlos cada vez que necesitemos una colección en la que no importe el orden, pero que necesitemos preguntar si un elemento está o no.
 
-Como, a diferencia de Collection, el orden no necesariamente es preservado, no existen métodos para “obtener el primer elemento”.
+Como, a diferencia de Collection, **el orden no necesariamente es preservado**, no existen métodos para “obtener el primer elemento”.
 
 En Resumen:
-Coleccion desordenada.
-No mantiene un orden cuando se guardan los elementos.
-No permite elementros duplicados.
-No es sincronizada. (no se garantiza el estado del Set si dos o más hilos acceden de forma concurrente al mismo)
+1. Coleccion desordenada.
+2. No mantiene un orden cuando se guardan los elementos.
+3. No permite elementros duplicados.
+4. No es sincronizada. (no se garantiza el estado del Set si dos o más hilos acceden de forma concurrente al mismo)
 
 Implmentaciones de la interfaz list:
 -HashSet
@@ -152,7 +153,7 @@ public class LinkedHashSet<E> extends HashSet<E> implements Set<E>, Cloneable, S
 
 Esta implementación almacena los elementos ordenándolos en función de sus valores. Es bastante más lento que HashSet. Los elementos almacenados deben implementar la interfaz Comparable. 
 
-Antes de entrar en la descripción de TreeSet vaya una breve explicación. Otra cosa que pueden saber hacer los objetos con independencia de cómo y dónde son usados es saber ordenarse. A diferencia de “equals” y “hashCode”, que están en todos los objetos, la capacidad de “ordernarse” está sólo en aquellos que implementan la interfaz Comparable. Cuando un objeto implementa esta interfaz promete saber compararse con otros (con el método **compareTo()**), y responder con este método si él está antes, después o es igual al objeto que se le pasa como parámetro. Al orden resultante de usar este método se le llama en Java “orden natural”. Muchas de las clases de Java implementan Comparable, por ejemplo String lo hace, definiendo un orden natural de los strings que es el obvio, el alfabético. También implementan esta interfaz Date, Number, etc. y los “órdenes naturales” que definen estas implementaciones también los los que uno esperaría.
+Antes de entrar en la descripción de TreeSet vaya una breve explicación. Otra cosa que pueden saber hacer los objetos con independencia de cómo y dónde son usados es saber ordenarse. A diferencia de “equals” y “hashCode”, que están en todos los objetos, la capacidad de “ordernarse” está sólo en aquellos que implementan la interfaz Comparable. Cuando un objeto implementa esta interfaz promete saber compararse con otros (con el método **compareTo()**), y responder con este método si él está antes, después o es igual al objeto que se le pasa como parámetro. Al orden resultante de usar este método se le llama en Java “orden natural”. Muchas de las clases de Java implementan Comparable, por ejemplo String lo hace, definiendo un orden natural de los strings que es el obvio, el alfabético. También implementan esta interfaz Date, Number, etc. y los “órdenes naturales” que definen estas implementaciones también son los que uno esperaría.
 
 Si yo creo una clase mía llamada Alumno, queda a mi cargo, si así lo quiero, la definición de un orden natural para los alumnos. Puedo elegir usar el apellido, el nombre, el número de matrícula, etc. De acuerdo al atributo que elija para definir el orden natural codificaré el método compareTo(). Lo que es importante es que la definición de este método sea compatible con el **equals()**; esto es que **a.equals(b)** si y sólo si **a.compareTo(b) == 0**.
 

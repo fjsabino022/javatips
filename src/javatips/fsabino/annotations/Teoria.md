@@ -58,14 +58,15 @@ Si las anotaciones tienen el mismo tipo, entonces se denomina anotación repetit
 @Author(name = "John Smith")
 class MyClass { ... }
 
-Las anotaciones repetidas se admiten desde la versión de Java SE 8. Para obtener más información, consulte Anotaciones repetidas.
+Las anotaciones repetidas se admiten desde la versión de Java SE 8.
 
-El tipo de anotación puede ser uno de los tipos que se definen en los paquetes java.lang o java.lang.annotation de la API de Java SE. En los ejemplos anteriores, Override y SuppressWarnings son anotaciones Java predefinidas. También es posible definir su propio tipo de anotación. Las anotaciones de Author y Ebook en el ejemplo anterior son tipos de anotaciones personalizadas.
+El tipo de anotación puede ser uno de los tipos que se definen en los paquetes java.lang o java.lang.annotation de la API de Java SE. En los ejemplos anteriores, Override y SuppressWarnings son anotaciones Java predefinidas. También es posible definir su propio tipo de anotación. Las anotaciones de Author y Ebook en el ejemplo anterior son tipos de **anotaciones personalizadas**.
 
 Si vienes programando en Java anteriormente, seguramente te topaste con 
 	@Deprecated
 	@Override:  le informa al compilador que sobreescribirá el método de la clase padre.
 	@SuppressWarning: le dice al compilador que elimine las advertencias que se pueden mostrar, es decir, ya no te mostrará advertencias que pueda generar ese método. Útil cuando ya no te interesan algunas advertencias que conoces.
+
 
 **¿Dónde puedo utilizar anotaciones?**
 
