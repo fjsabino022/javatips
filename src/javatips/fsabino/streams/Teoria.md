@@ -5,7 +5,7 @@ Streams son interfaces en Java 8 que tienen las siguientes caracteristicas:
 2. No deberian modificar los datos que estan procesando.
 3. Puede procesar la cantidad de informacion que queramos, datos infinitos.
 
-La API Stream nos permite realizar operaciones de tipo filtro/mapeo/reducción sobre colecciones de datos de forma secuencial o paralela y que su implementación sea transparente para el desarrollador.
+La API Stream nos permite realizar operaciones de tipo **filtro/mapeo/reducción** sobre colecciones de datos de forma secuencial o paralela y que su implementación sea transparente para el desarrollador.
 Lambdas y Stream son una combinación muy poderosa que requiere un cambio de paradigma en la forma en la que hemos escrito código Java hasta el momento.
 
 **Stream** se define como una secuencia de elementos que provienen de una fuente que soporta operaciones para el procesamiento de sus datos:
