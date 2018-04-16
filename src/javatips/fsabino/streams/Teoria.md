@@ -10,9 +10,9 @@ Lambdas y Stream son una combinación muy poderosa que requiere un cambio de par
 
 **Stream** se define como una secuencia de elementos que provienen de una fuente que soporta operaciones para el procesamiento de sus datos:
 
-1. De forma declarativa usando expresiones lambda.
-2. Permitiendo el posible encadenamiento de varias operaciones, con lo que se logra tener un código fácil de leer y con un objetivo claro.
-3. De forma secuencial o paralela (Fork/Join).
+1. **De forma declarativa usando expresiones lambda.**
+2. **Permitiendo el posible encadenamiento de varias operaciones, con lo que se logra tener un código fácil de leer y con un objetivo claro.**
+3. **De forma secuencial o paralela (Fork/Join).**
 
 Las estructuras que soportan esta nueva API se encuentran en el paquete *java.util.stream* y en especial, la interface *java.util.stream.Stream* define un Stream.
 
