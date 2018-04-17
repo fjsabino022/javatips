@@ -1,6 +1,11 @@
 ## SPLITERATOR
 
-Es un objeto especial en Java 8, en la que los **Streams** son construidos.
+Es un objeto especial en Java 8, en la que los **Streams** son construidos. Es una nueva interfaz que como su nombre lo indica, es un nuevo tipo de iterador que puede recorrer una coleccion de datos.
+Son usados para transversar y particionar secuencias de datos.
+El Spliterator no puede utilizarse sobre clases que implementan la interfaz Map.
+
+El Spliterator puede "cortar/splittear", particionando algunos de sus elementos como otro Spliterartor. Esto permite un procesamiento paralelo de diferentes partes de una coleccion, pero hay que aclarar que el Spliterator en si mismo no provee comportamento paralelo. 
+
 
 default Stream<E> stream () {
 	return StreamSupport.stream(spliterator(), false);
@@ -30,17 +35,20 @@ Un stream es dividido en dos partes:
 
 Un iterador en Java posee metodos como por ejemplo: next(), hasNext() y remove.
 Ahora podemos ver los siguientes metodos de la interfaz spliterator:
-1- tryAdvance(Consumer)
-2- trySplit()
-3. estiamteSize()
-4- characteristics()
+
+1- **tryAdvance(Consumer)**: Es el principal metodo de la interfaz y se utiliza para recorrer la secuencia de datos. Este metodo toma un Consumer como parametro y se utiliza este consumer para consumir los elementos del Spliterator uno a uno secuencialmente. Retorna false si no hay elementos para recorrer. Se utiliza para iterar elementos individualmente in multiples hilos paar soportar el procesamiento paralelo.
+
+2- **trySplit()**: Se utiliza para que el Spliterator pueda dividirse asi mismo para soportar el procesamiento paralelo.
+
+3. **estiamteSize()**: Retorna un estimado del numero de elementos que se pueden encontrar por el metodo forEachRemaining() or Long.Max_Value si el valor es infinito, no se sabe la cantidad o es muy costoso para computar.
+
+4- **characteristics()**: Retorna un set de caracteristicas del Spliterator y sus elementos.
 
 El spliterator sostiene la logica de acceso a los datos de un stream y los datos de un stream pueden ser infinitos, y puede que no sea seguro si todavia tiene objetos para consumir.
 El concepto de stream es muy muy diferente al concepto de colecciones en Java.
 
 
-
-
-
-
-
+## Bibliografía
+http://www.baeldung.com/java-spliterator
+https://blog.rapid7.com/2015/10/28/java-8-introduction-to-parallelism-and-spliterator/
+https://www.journaldev.com/13521/java-spliterator
