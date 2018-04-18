@@ -143,6 +143,8 @@ Aplicación:
 2- Que la creación de las partes de un objeto sea independiente del objeto principal.
 3- Ocultar la creación de las partes de un objeto del cliente, de esta manera no existe dependencia entre el cliente y las partes.
 
+Ejemplo de este patron son las clases StringBuilder, DocumentBuilder y Locale.Builder.
+
 Video: https://www.youtube.com/watch?v=ifw8rBmvnWw
 
 
