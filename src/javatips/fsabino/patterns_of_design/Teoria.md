@@ -148,6 +148,19 @@ Ejemplo de este patron son las clases StringBuilder, DocumentBuilder y Locale.Bu
 Video: https://www.youtube.com/watch?v=ifw8rBmvnWw
 
 
+## PROTOTYPE (CLONACIÓN)
+
+**Propósito**: Especificar varios tipos de objetos que pueden ser creados en un prototipo para crear nuevos objetos copiando ese prototipo. Reduce la necesidad de crear subclases.
+
+Aplicación
+
+1- Queremos crear nuevos objetos mediante la clonación o copia de otros.
+2- Cuando tenemos muchas clases potenciales que queremos usar sólo si son requeridas durante el tiempo de ejecución.
+
+*Clonacion superficial vs Clonacion profunda*
+**Superficial**: Cuando se clona el objeto pero el nuevo objeto es la misma instancia del anterior, es el mismo objeto.
+**Clonacion**: Cuando se clona el objeto pero el nuevo objeto es una nueva instancia con los valores clonados.
+
 # PATRONES DE COMPORTAMIENTO
 
 
