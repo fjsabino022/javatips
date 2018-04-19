@@ -11,5 +11,4 @@ public class LunchOrderMain {
 		System.out.println(lunchOrder.getBread());
 		System.out.println(lunchOrder.getMeat());
 	}
-
 }

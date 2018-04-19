@@ -1,5 +1,9 @@
 package javatips.fsabino.patterns_of_design.creational.builder.pluralsight;
 
+/**
+ * En este caso una vez que creamos el objeto LunchOrder
+ * el mismo es inmutable porque no existen los metodos "set" de las propiedades
+ * */
 public class LunchOrder {
 
 	public static class Builder {
