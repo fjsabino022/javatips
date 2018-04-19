@@ -233,8 +233,20 @@ Creamos una clase abstracta que tiene el rol de componente, esta clase abstracta
 La hoja y el compuesto concreto heredan de esta clase abtracta. La clase compuesta a su vez tiene atributos particulares del compuesto.
 La clase compuesto tiene un atributo de una lista de componente.
 
-
 Video: https://www.youtube.com/watch?v=E85Nu2auOFI&t=2s
+
+
+## ADAPTER (ADAPTADOR)
+
+
+Como cualquier adaptador en el mundo real este patrón se utiliza para ser una interfaz, un puente, entre dos objetos. En el mundo real existen adaptadores para fuentes de alimentación, tarjetas de memoria de una cámara, entre otros. En el desarrollo de software, es lo mismo.
+
+**Propósito**: Convertir la interfaz (**adaptee**) de una clase en otra interfaz (**target**) que el cliente espera. Permitir a dos interfaces incompatibles trabajar en conjunto. Este patrón nos permite ver a nuevos y distintos elementos como si fueran igual a la interfaz conocida por nuestra aplicación.
+
+Aplicación: 
+
+1- Cuando el cliente espera usar la interfaz de destino (target).
+2- Deseamos usar una clase existente pero la interfaz que ofrece no concuerda con la que necesitamos.
 
 ## Bibliografía
 https://es.wikipedia.org/wiki/Patr%C3%B3n_de_dise%C3%B1o
