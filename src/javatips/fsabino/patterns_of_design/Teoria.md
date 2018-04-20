@@ -238,7 +238,6 @@ Video: https://www.youtube.com/watch?v=E85Nu2auOFI&t=2s
 
 ## ADAPTER (ADAPTADOR)
 
-
 Como cualquier adaptador en el mundo real este patrón se utiliza para ser una interfaz, un puente, entre dos objetos. En el mundo real existen adaptadores para fuentes de alimentación, tarjetas de memoria de una cámara, entre otros. En el desarrollo de software, es lo mismo.
 
 **Propósito**: Convertir la interfaz (**adaptee**) de una clase en otra interfaz (**target**) que el cliente espera. Permitir a dos interfaces incompatibles trabajar en conjunto. Este patrón nos permite ver a nuevos y distintos elementos como si fueran igual a la interfaz conocida por nuestra aplicación.
