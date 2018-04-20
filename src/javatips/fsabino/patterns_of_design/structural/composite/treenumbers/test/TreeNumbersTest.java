@@ -1,14 +1,14 @@
 package javatips.fsabino.patterns_of_design.structural.composite.treenumbers.test;
 
 
+import javatips.fsabino.patterns_of_design.structural.composite.treenumbers.problem.TreeNumbers;
+
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import org.junit.Before;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.ExpectedException;
-
-import javatips.fsabino.patterns_of_design.structural.composite.treenumbers.problem.TreeNumbers;
 
 public class TreeNumbersTest {
     
@@ -26,7 +26,7 @@ public class TreeNumbersTest {
     public ExpectedException exception = ExpectedException.none();
 
     @Before
-    public void ini() {
+    public  void ini() {
         this.root = new TreeNumbers("raiz");
 
         this.leaf = new TreeNumbers(1);
