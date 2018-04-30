@@ -247,6 +247,41 @@ Aplicación:
 1- Cuando el cliente espera usar la interfaz de destino (target).
 2- Deseamos usar una clase existente pero la interfaz que ofrece no concuerda con la que necesitamos.
 
+
+## PROXY (SUSTITUTO)
+
+Se utiliza cuando es necesario instanciar objetos sólo cuando sean efectivamente solicitados (request) por el cliente.
+
+1. Crea una instancia del objeto real la primera vez que el cliente realiza una solicitud del proxy.
+2. Recuerda la identidad de este objeto real.
+3. Finalmente, envía la solicitud del servicio al objeto real.
+
+**Propósito**:
+- Proveer un sustituto o "placeholder" de otro objeto para controlar el acceso a este.
+- Usar un nivel extra de indirección para permitir el acceso distribuido, controlado e inteligente.
+- Agregar un "wrapper" para proteger el componente real de la complejidad innecesaria. Este wrapper permite agregar funcionalidad al objeto de interés sin cambiar el código del objeto.
+
+**Aplicación**:
+- Cuando haya necesidad de una referencia más versátil y sofisticada a un objeto, no un simple puntero.
+- Para adicionar seguridad al acceso de un objeto. El Proxy determinará si el cliente puede acceder al objeto de interés.
+- Para proporcionar una API simplificada para que el código del cliente no tenga que lidiar con la complejidad del código del objeto de interés.
+- Para proporcionar una interfaz de los web services o recursos REST.
+
+**Escenarios de uso**:
+- Remote Proxy: Representa un objeto local que pertenece a un espacio de direcciones diferente.
+- Virtual Proxy: En lugar de un objeto complejo o pesado, utiliza una representación de esqueleto. Consideremos una imagen la cual es enorme en tamaño, podemos representarla mediante un objeto proxy virtual y cuando sea solicitado cargamos el objeto real.
+- Protection Proxy: Controla el acceso al objeto original. Este tipo es útil cuando se necesita manejar diferentes permisos de acceso.
+
+
+## FLYWEIGHT (PESO LIGERO)
+
+Lo que busca es eliminar redundancia cuando existen gran cantidad de objetos que tienen identica o muy parecida informacion.
+Cuando la cantidad de objetos que se deben crear es un muy grande, consumo mucho recurso de maquina, lo que pretende el patron es crearlos en un primer momento y utilizarlos despues.
+Evitar estar creando permanentemente los objetos.
+La informacion de cada uno de los objetos es intrinseca, quiere decir que su informacion no se puede cambiar, es inmutable.
+
+Video: https://www.youtube.com/watch?v=dX4A0plX0uI&list=PLj2IVmcP-_QMhr43RogO__fOxnWWjc4Tv&index=7
+
 ## Bibliografía
 https://es.wikipedia.org/wiki/Patr%C3%B3n_de_dise%C3%B1o
 https://github.com/LuisBurgos/design-patterns
