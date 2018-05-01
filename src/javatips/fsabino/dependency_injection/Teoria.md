@@ -157,5 +157,7 @@ https://www.oscarblancarteblog.com/2016/12/01/concepto-inversion-of-control/
 http://chuwiki.chuidiang.org/index.php?title=Inversi%C3%B3n_de_Control
 https://itblogsogeti.com/2015/10/29/inyeccion-de-dependencias-vs-inversion-de-control-eduard-moret-sogeti/
 
+**VIDEO**: https://www.youtube.com/watch?v=bztKI8EC-eQ
+
 ## Ejemplo de codigo
 https://www.adictosaltrabajo.com/tutoriales/spring-container-inyeccion-dependencias/#040

@@ -282,6 +282,24 @@ La informacion de cada uno de los objetos es intrinseca, quiere decir que su inf
 
 Video: https://www.youtube.com/watch?v=dX4A0plX0uI&list=PLj2IVmcP-_QMhr43RogO__fOxnWWjc4Tv&index=7
 
+
+## DECORATOR (DECORADOR)
+
+Extender la funcionalidad de los objetos se puede hacer de forma estática en nuestro código (tiempo de compilación) mediante el uso de la herencia, sin embargo, podría ser necesario extender la funcionalidad de un objeto de manera dinámica.
+
+Asigna responsabilidades de forma dinamica a objetos, proporcionando una alternativa flexible a la herencia.
+
+**Propósito**: Adjuntar responsabilidades adicionales a un objeto de forma dinámica. Los decoradores proporcionan una alternativa flexible para ampliar la funcionalidad.
+
+**Aplicación**: 
+
+- Cuando necesitamos añadir o eliminar dinámicamente las responsabilidades a un objeto, sin afectar a otros objetos.
+- Cuando queremos tener las ventajas de la Herencia pero ncesitemos añadir funcionalidad durante el tiempo de ejecución. Es más flexible que la Herencia,
+- Simplificar el código agregando funcionalidades usando muchas clases diferentes.
+- Evitar sobreescribir código viejo agregando, envés, código nuevo.
+
+Video: https://www.youtube.com/watch?v=PXa6P9Y7Jr0
+
 ## Bibliografía
 https://es.wikipedia.org/wiki/Patr%C3%B3n_de_dise%C3%B1o
 https://github.com/LuisBurgos/design-patterns
