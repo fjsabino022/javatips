@@ -13,6 +13,12 @@ Supongamos que guardamos 3 objetos en esta estructura y el método hashCode de l
 
 Respecto a la implementación del método hashCode de la clase Object, el identificador native señala que es responsabilidad del compilador determinar cómo realizará esta labor. En todas las implementaciones que he revisado, de **forma nativa devuelve una representación numérica de la 'dirección de memoria' en la que se encuentra ubicado el objeto**. Esta parece una buena estrategia por defecto, pero tiene un gran problema: hay muchas más direcciones de memoria que 'número de cajones' por lo que la estructura resuelve el problema (nuevamente, esto también depende de la implementación) asignándole el cajón número hashcode()%MAX_LENGTH donde MAX_LENGTH es el tamaño máximo del arreglo. Entonces, a mayor cantidad de elementos a guardar, mayor es la probabilidad que haya cajones en la estructura que tengan exceso de elementos.
 
+
+El método hashCode() es especialmente importante cuando nuestros objetos se van a almacenar en colecciones de tipo Hash, ya que éstas se basan en este método para optimizar búsquedas y ordenaciones.
+
+La forma en la que trabajan las colecciones de este tipo a groso modo la siguiente: almacenan los objetos en “celdas”, en función del número obtenido por el método hashCode(); es decir, si el método hashCode() devuelve 100, el objeto se almacena en la “celda” 100. Puede pasar que en la misma “celda” haya más de un objeto de distinto tipo. De forma, que para buscar un objeto en las “celdas” estas colecciones usan el hashCode() del objeto a buscar y recuperan el objeto de la “celda” correspondiente, si hubiera más de un objeto para esa “celda” el siguiente criterio para recuperar el objeto adecuado sería aplicar el método equals(). Pero para que esto funcione se debe sobreescribir adecuadamente el método hashCode().
+
+
 Reglas que sigue el método hashCode
 
 1- Si el método hashCode es invocado en múltiples ocasiones durante la ejecución de una aplicación, debe regresar consistentemente el mismo valor entero, esto si la información utilizada para calcular el hashcode no ha cambiado entre invocación e invocación del método hashCode.
@@ -33,6 +39,8 @@ La implementación por defecto de la clase Object es clara: **compara referencia
 La implementación del método equals de la clase Object usa la equivalencia más restrictiva posible, esto es, para cualquier referencia no nula de x e y este método retorna true si y solo si son el mismo objeto (x == y tienen la misma referencia).
 
 Ahora bien, como se dará cuenta, el método equals() no llama al método hashCode(), entonces ¿por qué sobreescribir el método hashCode() cuando se sobreescribe el método equals()? la respuesta más sencilla es porque la documentación lo sugiere: si dos objetos son iguales, deben tener el mismo valor devuelto por hashCode(). A pesar de ser una sugerencia, nuevamente la operación en estas estructuras deja ver por qué es necesario: si dos objetos tienen el mismo hashCode, ambos objetos se guardarán en el mismo cajón, la estructura usa ahora el método equals() dentro de ese cajón para determinar cuál corresponde con el solicitado, y para eso depende de que usted haya sobreescrito el método, de lo contrario no garantiza un resultado correcto.
+
+Implementando correctamente el método equals() lograremos saber si dos instancias de una clase son iguales o no. Esto es especialmente importante cuando nuestros objetos se van a incluir en colecciones; por ejemplo, los Set no admiten instancias de objetos duplicados y se basan en el método equals del objeto para comprobar si un objeto que se añade existe o no
 
 En resumen:
 
@@ -98,6 +106,7 @@ https://es.stackoverflow.com/questions/5641/equals-y-hashcode-java
 https://www.arquitecturajava.com/entiendo-los-metodos-de-java-equals-y-hashcode/
 http://javaparanulos.blogspot.com.ar/2011/12/hashcode-y-equals.html
 http://www.javahispano.org/certificacion/2011/9/28/genericos-y-colecciones-parte-1-sobreescribiendo-equals-y-ha.html
+https://pajarokillo.wordpress.com/2011/10/10/metodos-hashcode-y-equals/
 
 ## Ejemplo de codigo
 https://www.geeksforgeeks.org/equals-hashcode-methods-java/
