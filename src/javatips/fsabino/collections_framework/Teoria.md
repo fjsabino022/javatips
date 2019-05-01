@@ -253,6 +253,7 @@ http://www.reloco.com.ar/prog/java/collections.html
 https://www.adictosaltrabajo.com/tutoriales/introduccion-a-colecciones-en-java/
 https://www.javatpoint.com/java-list
 https://beginnersbook.com/2013/12/difference-between-arraylist-and-linkedlist-in-java/
+https://www.aprenderaprogramar.com/index.php?option=com_content&view=article&id=605:interface-list-clase-linkedlist-api-java-ejercicio-diferencias-entre-arraylist-y-linkedlist-codigo-cu00921c&catid=58&Itemid=180
 
 ## Ejemplo de codigo
 https://beginnersbook.com/java-collections-tutorials/#2
