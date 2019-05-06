@@ -43,5 +43,18 @@ public class HashMapExample {
 			System.out.print("Key is: " + mentry2.getKey() + " & Value is: ");
 			System.out.println(mentry2.getValue());
 		}
+
+		//hashmap allows us to add null key
+		hmap.put(null, 	"Null value");
+		String value = hmap.get(null);
+
+		//replace the value of the same key
+		hmap.put(null, 	"Null value 2");
+		String value2 = hmap.get(null);
+
+		//hashmap allows us to add null value
+		hmap.put(1000, 	null);
+		String valueNull = hmap.get(1000);
+
 	}
 }
