@@ -87,6 +87,14 @@ Declaracion
 public class LinkedList<E> extends AbstractSequentialList<E> implements List<E>, Deque<E>, Cloneable, Serializable  
 
 
+|  Array List                            |  LinkedLIst               |
+|  Position  | Initial | Middle |  End   |  Initial | Middle |  End  |
+|  get       | 0(1)    | 0(1)   |  0(1)  |  0(1)    | 0(n/2) |  0(n) |
+|  remove    | 0(n)    | 0(n/2) |  0(1)  |  0(1)    | 0(1)   |  0(1) |
+|  add       | 0(n)    | 0(n/2) |  0(1)  |  0(1)    | 0(1)   |  0(1) |
+
+https://beginnersbook.com/2013/12/difference-between-arraylist-and-linkedlist-in-java/
+
 ### Set
 
 La interfaz Set define una colección que no puede contener elementos duplicados. Esta interfaz contiene, únicamente, los métodos heredados de Collection añadiendo la restricción de que los elementos duplicados están prohibidos. Es importante destacar que, para comprobar si los elementos son elementos duplicados o no lo son, es necesario que dichos elementos tengan implementada, de forma correcta, los métodos **equals y hashCode**. Para comprobar si dos Set son iguales, se comprobarán si todos los elementos que los componen son iguales sin importar en el orden que ocupen dichos elementos.
