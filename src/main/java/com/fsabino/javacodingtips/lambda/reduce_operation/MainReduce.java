@@ -16,8 +16,8 @@ public class MainReduce {
 		List<Integer> ints2fornegartive = Arrays.asList(-1,-2,-3,-4);
 		
 		// Define a binary operator with lambda expression
-		BinaryOperator<Integer> suma = (num1 , num2) -> num1 + num2;
-		BinaryOperator<Integer> max = (num1 , num2) -> Integer.max(num1, num2);
+		BinaryOperator<Integer> suma = Integer::sum;
+		BinaryOperator<Integer> max = Integer::max;
 		BinaryOperator<Integer> nonAsociativeOperation = (num1 , num2) -> (num1 + num2) * (num1 + num2);
 		BinaryOperator<Integer> firstElementOperation = (num1 , num2) -> num1;
 		BinaryOperator<Integer> averange = (num1 , num2) -> (num1 + num2)/2;

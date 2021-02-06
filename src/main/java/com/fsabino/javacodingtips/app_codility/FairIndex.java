@@ -7,26 +7,33 @@ public class FairIndex {
     public static void main(String[] args) {
         int[] A = new int[5];
         int[] B = new int[5];
-        A[0] = 0;
+        A[0] = 1;
         A[1] = 4;
-        A[2] = -1;
-        A[3] = 0;
-        A[4] = 3;
+        A[2] = 2;
+        A[3] = -2;
+        A[4] = 5;
 
-        B[0] = 0;
+        B[0] = 7;
         B[1] = -2;
-        B[2] = 5;
-        B[3] = 0;
-        B[4] = 3;
-
+        B[2] = -2;
+        B[3] = 2;
+        B[4] = 5;
         int result = solution(A, B);
 
         System.out.println(result);
     }
 
     public static int solution(int[] A, int[] B) {
+        int lengthA = A.length;
+        int lengthB = B.length;
+        if (lengthA < 2 || lengthA > 100000) {
+            throw new IllegalArgumentException("Length of array A is invalid");
+        }
+        if (lengthB < 2 || lengthB > 100000) {
+            throw new IllegalArgumentException("Length of array B is invalid");
+        }
         int count = 0;
-        for (int i = 1; i <= A.length -1; i++) {
+        for (int i = 1; i <= lengthA -1; i++) {
            int sumFirstPartList1 = calculateSumFistPart(A, i);
            int sumSecondPartList1 = calculateSumSecondPart(A, i);
            if (sumFirstPartList1 == sumSecondPartList1) {
