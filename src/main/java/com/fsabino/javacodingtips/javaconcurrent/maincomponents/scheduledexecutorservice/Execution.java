@@ -2,7 +2,7 @@ package com.fsabino.javacodingtips.javaconcurrent.maincomponents.scheduledexecut
 
 import java.util.concurrent.*;
 
-public class Main {
+class Main {
     public static void main(String[] args) {
 
         ScheduledExecutorService executorService
