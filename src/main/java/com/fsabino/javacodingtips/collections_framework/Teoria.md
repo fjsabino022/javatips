@@ -73,7 +73,7 @@ public class ArrayList<E> extends AbstractList<E> implements List<E>, RandomAcce
 Esta implementación se basa en una lista doblemente enlazada de los elementos, teniendo cada uno de los elementos un puntero al anterior y al siguiente elemento.
 Los elementos son mantenidos en una serie de nodos atados entre sí como eslabones de una cadena. Cada uno de estos nodos apunta a su antecesor y al elemento que le sigue. No hay nada en cada uno de esos nodos que tenga algo que ver con la posición en la lista. Para obtener el elemento número “n”, esta implementación de List necesita entonces empezar desde el comienzo, desde el primer nodo, e ir avanzando al “siguiente” n veces. Buscar el elemento 400 entonces implica 400 de esos pasitos. La ventaja es que es posible eliminar elementos del principio de la lista y del medio de manera muy eficiente. Para eliminar un elemento solamente hay que modificar a sus dos “vecinos” para que se “conecten” entre sí ignorando al elemento que se está borrando. Como en una cadena, se retira un eslabón abriendo los eslabones adyacentes al que se eliminá y cerrándolos de modo que lo excluyan. No es necesario hacerle ningún cambio al resto de los elementos de la lista.
 
-Su método get(int) es particularmente lento porque, como dije, necesita recorrer para llegar al elemento pedido. Esto hace que recorrer la ista con un simple for(int i = 0 ; i < lista.size(); i++) sea tremendamente lento! La complejidad pasa de ser lineal a cuadrática, es decir: Si se recorre así una lista de 300 elementos, se tarda como si tuviera 44.850 elementos! Una LinkedList sólo debe recorrerse mediante iteradores.
+Su método get(int) es particularmente lento porque, como dije, necesita recorrer para llegar al elemento pedido. Esto hace que recorrer la lista con un simple for(int i = 0 ; i < lista.size(); i++) sea tremendamente lento! La complejidad pasa de ser lineal a cuadrática, es decir: Si se recorre así una lista de 300 elementos, se tarda como si tuviera 44.850 elementos! Una LinkedList sólo debe recorrerse mediante iteradores.
 
 Los puntos importantes son:
 1. Puede contener elementos duplicados.
@@ -92,6 +92,8 @@ public class LinkedList<E> extends AbstractSequentialList<E> implements List<E>,
 |  get       | 0(1)    | 0(1)   |  0(1)  |  0(1)    | 0(n/2) |  0(n) |
 |  remove    | 0(n)    | 0(n/2) |  0(1)  |  0(1)    | 0(1)   |  0(1) |
 |  add       | 0(n)    | 0(n/2) |  0(1)  |  0(1)    | 0(1)   |  0(1) |
+
+"Indexing" as a separate operation. So insertion is itself O(1), but getting to that middle node is O(n).
 
 https://beginnersbook.com/2013/12/difference-between-arraylist-and-linkedlist-in-java/
 
@@ -214,7 +216,7 @@ Implementaciones:
 
 Esta implementación almacena las claves en una tabla hash (implementa la interfaz Map utilizando el HashTable). Es la implementación con mejor rendimiento de todas pero no garantiza ningún orden a la hora de realizar iteraciones. Esta implementación proporciona tiempos constantes en las operaciones básicas siempre y cuando la función hash disperse de forma correcta los elementos dentro de la tabla hash. Es importante definir el tamaño inicial de la tabla ya que este tamaño marcará el rendimiento de esta implementación.
 
-Esta clase no garantiza como será el orden del mapa. Es similar a HashTable excepto que este no sincronizada y permite valores nulos (clave nula y valores nulos)
+Esta clase no garantiza como será el orden del mapa. Es similar a HashTable excepto que este no sincronizada y permite valores nulos (clave nula y valores nulos).
 Es una coleccion no ordenada que significa que no retorna las clave-valor en el mismo orden en el que fueron insertadas dentro del HashMap.
 
 Los puntos importantes son:
@@ -222,6 +224,7 @@ Los puntos importantes son:
 2. Contiene elementos unicos, no permite duplicados.
 3. Puede tener una unica key null, y muchos valores nulos.
 4. No mantiene el orden de insercion.
+5. HashMap is a non-synchronized
 
 Declaración:
 public class HashMap<K,V> extends AbstractMap<K,V> implements Map<K,V>, Cloneable, Serializable  
